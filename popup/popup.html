@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilibili Content Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="title">评论屏蔽</span>
+      <label class="switch">
+        <input type="checkbox" id="enableSwitch">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="regex-editor">
+      <div class="regex-list" id="regexList">
+      </div>
+      <div class="regex-actions">
+        <button class="action-btn" id="addBtn" title="添加">+</button>
+        <button class="action-btn" id="deleteBtn" title="删除">-</button>
+      </div>
+    </div>
+
+    <div class="options">
+      <div class="block-mode">
+        <span class="option-label">屏蔽方式:</span>
+        <label class="radio-label">
+          <input type="radio" name="blockMode" value="blackout" checked>
+          <span>黑幕屏蔽</span>
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="blockMode" value="hide">
+          <span>直接隐藏</span>
+        </label>
+      </div>
+      <button class="export-btn" id="exportBtn">导出为B站弹幕屏蔽规则文件</button>
+    </div>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
