@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Bilibili Content Blocker",
+  "version": "1.0.0",
+  "description": "Filter Bilibili video comments using custom regex patterns",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["*://*.bilibili.com/*"],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "images/bilibili-content-blocker.png",
+      "48": "images/bilibili-content-blocker.png",
+      "128": "images/bilibili-content-blocker.png"
+    }
+  },
+  "icons": {
+    "16": "images/bilibili-content-blocker.png",
+    "48": "images/bilibili-content-blocker.png",
+    "128": "images/bilibili-content-blocker.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.bilibili.com/*"],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background/background.js"
+  }
+}

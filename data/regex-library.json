@@ -1,0 +1,21 @@
+{
+  "groups": [
+    {
+      "name": "广告推广",
+      "items": [
+        { "type": 1, "filter": "加微信|加V|加Q", "opened": true, "id": 1 },
+        { "type": 1, "filter": "代刷|代练|代充", "opened": true, "id": 2 }
+      ]
+    },
+    {
+      "name": "引战内容",
+      "items": [
+        { "type": 1, "filter": "引战|带节奏", "opened": true, "id": 3 }
+      ]
+    },
+    {
+      "name": "其它",
+      "items": []
+    }
+  ]
+}
