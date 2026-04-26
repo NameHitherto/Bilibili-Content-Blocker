@@ -4,92 +4,80 @@
       "name": "广告推广",
       "items": [
         { "type": 1, "filter": "加微信|加V|加Q", "opened": true, "id": 1 },
-        { "type": 1, "filter": "代刷|代练|代充", "opened": true, "id": 2 },
-        { "type": 1, "filter": "兼职.{0,5}(日结|日赚|日入)", "opened": true, "id": 3 },
-        { "type": 1, "filter": "免费(领取|送|领|拿)", "opened": true, "id": 4 },
-        { "type": 1, "filter": "(点击|复制).{0,10}(链接|网址)", "opened": true, "id": 5 },
-        { "type": 1, "filter": "[a-zA-Z0-9]{6,}\\.[cC][oO][mM]", "opened": true, "id": 6 },
-        { "type": 1, "filter": "引流|涨粉|互粉|互关", "opened": true, "id": 7 }
+        { "type": 1, "filter": "兼职.{0,5}(日结|日赚|日入)", "opened": true, "id": 2 }
       ]
     },
     {
       "name": "引战拉踩",
       "items": [
-        { "type": 1, "filter": "引战|带节奏", "opened": true, "id": 8 },
-        { "type": 1, "filter": "不如.{0,5}(原版|原作|前作|上一)", "opened": true, "id": 9 },
-        { "type": 1, "filter": "(垃圾|烂片|烂作|粪作)", "opened": true, "id": 10 },
-        { "type": 1, "filter": "就这[？?]|就这水平", "opened": true, "id": 11 },
-        { "type": 1, "filter": "(吊打|完爆|碾压).{0,5}(其他|其它|所有)", "opened": true, "id": 12 },
-        { "type": 1, "filter": "这届.{0,5}(不行|太差|真差)", "opened": true, "id": 13 }
+        { "type": 1, "filter": "引战|带节奏", "opened": true, "id": 3 },
+        { "type": 1, "filter": "不如.{0,5}(原版|原作|前作|上一)", "opened": true, "id": 4 },
+        { "type": 1, "filter": "就这[？?]|就这水平", "opened": true, "id": 5 },
+        { "type": 1, "filter": "(吊打|完爆|碾压).{0,5}(其他|其它|所有)", "opened": true, "id": 6 },
+        { "type": 1, "filter": "这届.{0,5}(不行|太差|真差)", "opened": true, "id": 7 }
       ]
     },
     {
       "name": "人身攻击",
       "items": [
-        { "type": 1, "filter": "脑残|智障|弱智|nc|脑瘫", "opened": true, "id": 14 },
-        { "type": 1, "filter": "[sS][bB]|[傻砂][逼比币叉]", "opened": true, "id": 15 },
-        { "type": 1, "filter": "尼玛|你妈.{0,2}(死|没|飞|炸)", "opened": true, "id": 16 },
-        { "type": 1, "filter": "傻.{0,1}(狗|逼|叉|卵|鸟)", "opened": true, "id": 17 },
-        { "type": 1, "filter": "(脑子|智商).{0,3}(有问题|进水|欠费)", "opened": true, "id": 18 }
+        { "type": 1, "filter": "脑残|智障|弱智|nc|脑瘫", "opened": true, "id": 8 },
+        { "type": 1, "filter": "[sS][bB]|[傻砂][逼比币叉]", "opened": true, "id": 9 },
+        { "type": 1, "filter": "尼玛|你妈.{0,2}(死|没|飞|炸)", "opened": true, "id": 10 },
+        { "type": 1, "filter": "傻.{0,1}(狗|逼|叉|卵|鸟)", "opened": true, "id": 11 },
+        { "type": 1, "filter": "(脑子|智商).{0,3}(有问题|进水|欠费)", "opened": true, "id": 12 }
       ]
     },
     {
       "name": "刷屏灌水",
       "items": [
-        { "type": 1, "filter": "(.)\\1{5,}", "opened": true, "id": 19 },
-        { "type": 1, "filter": "^(前排|第一|沙发|板凳|地板)$", "opened": true, "id": 20 },
-        { "type": 1, "filter": "(\\S{1,10})\\s*\\1\\s*\\1\\s*\\1", "opened": true, "id": 21 },
-        { "type": 1, "filter": "^[\\s\\S]{0,2}$", "opened": false, "id": 22 },
-        { "type": 1, "filter": "^(dd|顶|上去|up|666)+$", "opened": true, "id": 23 }
+        { "type": 1, "filter": "^(前排|第一|沙发|板凳|地板)$", "opened": true, "id": 13 }
       ]
     },
     {
       "name": "剧透内容",
       "items": [
-        { "type": 1, "filter": "凶手.{0,5}(是|就是)", "opened": true, "id": 24 },
-        { "type": 1, "filter": "(最后|结局).{0,3}(死|活|赢了|输了|挂了)", "opened": true, "id": 25 },
-        { "type": 1, "filter": "剧透.{0,10}(慎入|注意|预警)", "opened": true, "id": 26 },
-        { "type": 1, "filter": "(后面|后头).{0,3}(会|要).{0,3}(死|挂|领盒饭)", "opened": true, "id": 27 }
+        { "type": 1, "filter": "凶手.{0,5}(是|就是)", "opened": true, "id": 14 },
+        { "type": 1, "filter": "(最后|结局).{0,3}(死|活|赢了|输了|挂了)", "opened": true, "id": 15 },
+        { "type": 1, "filter": "剧透.{0,10}(慎入|注意|预警)", "opened": true, "id": 16 },
+        { "type": 1, "filter": "(后面|后头).{0,3}(会|要).{0,3}(死|挂|领盒饭)", "opened": true, "id": 17 }
       ]
     },
     {
       "name": "低俗内容",
       "items": [
-        { "type": 1, "filter": "草.{0,2}(拟|泥|你|尼).{0,2}马", "opened": true, "id": 28 },
-        { "type": 1, "filter": "[fF].{0,1}[uU].{0,1}[cC].{0,1}[kK]", "opened": true, "id": 29 },
-        { "type": 1, "filter": "卧槽|我擦|我艹|woc", "opened": true, "id": 30 },
-        { "type": 1, "filter": "[靠操草艹][你尼拟]|日了", "opened": true, "id": 31 }
+        { "type": 1, "filter": "草.{0,2}(拟|泥|你|尼).{0,2}马", "opened": true, "id": 18 },
+        { "type": 1, "filter": "[fF].{0,1}[uU].{0,1}[cC].{0,1}[kK]", "opened": true, "id": 19 },
+        { "type": 1, "filter": "[靠操草艹][你尼拟]|日了", "opened": true, "id": 20 }
       ]
     },
     {
       "name": "钓鱼引战",
       "items": [
-        { "type": 1, "filter": "不会吧.{0,15}(不会|没有)", "opened": true, "id": 32 },
-        { "type": 1, "filter": "(只有|就)我一个人.{0,10}[？?]", "opened": true, "id": 33 },
-        { "type": 1, "filter": "不服.{0,5}(来辩|来喷|打我)", "opened": true, "id": 34 },
-        { "type": 1, "filter": "^.{0,5}(懂的都懂|dddd)$", "opened": true, "id": 35 }
+        { "type": 1, "filter": "不会吧.{0,15}(不会|没有)", "opened": true, "id": 21 },
+        { "type": 1, "filter": "(只有|就)我一个人.{0,10}[？?]", "opened": true, "id": 22 },
+        { "type": 1, "filter": "不服.{0,5}(来辩|来喷|打我)", "opened": true, "id": 23 },
+        { "type": 1, "filter": "^.{0,5}(懂的都懂|dddd)$", "opened": true, "id": 24 }
       ]
     },
     {
       "name": "二游",
       "items": [
-        { "type": 1, "filter": "也够|野狗", "opened": true, "id": 37 },
-        { "type": 1, "filter": "酷狗|库狗", "opened": true, "id": 38 },
-        { "type": 1, "filter": "(米|库|厂商|游戏).{0,2}孝子", "opened": true, "id": 39 },
-        { "type": 1, "filter": "(低端|高端|AI|ai).{0,3}神游|半步.{0,5}(神游|长青)", "opened": true, "id": 40 },
-        { "type": 1, "filter": "味大.{0,3}(无需|何须).{0,3}(多盐|多言|盐)", "opened": true, "id": 41 },
-        { "type": 1, "filter": "(飞榜|飞得高|飞的高|没过抖)", "opened": true, "id": 42 },
-        { "type": 1, "filter": "(不敢说|不?忌言).{0,5}(怕|中|低|高|玩家|勿|别|会|被)|(高端|低端|玩家|注意).{0,5}(不敢说|不?忌言)", "opened": true, "id": 43 },
-        { "type": 1, "filter": "(巡海游侠|流光忆庭).{0,5}(工作|干活|出动|为您|护航|保驾)", "opened": true, "id": 44 },
-        { "type": 1, "filter": "哈气.{0,5}(漂泊|玩家)|漂泊.{0,5}哈气", "opened": true, "id": 45 },
-        { "type": 1, "filter": "低端.{0,3}负资产", "opened": true, "id": 46 },
-        { "type": 1, "filter": "漂泊.{0,10}(别|又在|一天|哈气|急了|不|来|还)", "opened": true, "id": 47 },
-        { "type": 1, "filter": "(原神|鸣潮|wuwa|方舟|绝区零).{0,3}玩家.{0,6}(就这样|是这样|都这样|就是.{0,2}(这样|那样))", "opened": true, "id": 48 }
+        { "type": 1, "filter": "也够|野狗", "opened": true, "id": 25 },
+        { "type": 1, "filter": "(米|库|厂商|游戏).{0,2}孝子", "opened": true, "id": 26 },
+        { "type": 1, "filter": "(低端|高端|AI|ai).{0,3}神游|半步.{0,5}(神游|长青)", "opened": true, "id": 27 },
+        { "type": 1, "filter": "(飞榜|飞得高|飞的高|没过抖)", "opened": true, "id": 28 },
+        { "type": 1, "filter": "(不敢说|不?忌言).{0,5}(怕|中|低|高|玩家|勿|别|会|被)|(高端|低端|玩家|注意).{0,5}(不敢说|不?忌言)", "opened": true, "id": 29 },
+        { "type": 1, "filter": "(巡海游侠|流光忆庭).{0,5}(工作|干活|出动|为您|护航|保驾)", "opened": true, "id": 30 },
+        { "type": 1, "filter": "哈气.{0,5}(漂泊|玩家)|漂泊.{0,5}哈气", "opened": true, "id": 31 },
+        { "type": 1, "filter": "低端.{0,3}负资产", "opened": true, "id": 32 },
+        { "type": 1, "filter": "漂泊.{0,10}(别|又在|一天|哈气|急了|不|来|还)", "opened": true, "id": 33 },
+        { "type": 1, "filter": "(原神|鸣潮|wuwa|方舟|绝区零).{0,3}玩家.{0,6}(就这样|是这样|都这样|就是.{0,2}(这样|那样))", "opened": true, "id": 34 }
       ]
     },
     {
       "name": "其它",
-      "items": []
+      "items": [
+      ]
     }
   ]
 }
