@@ -1,7 +1,54 @@
+const STORAGE_KEYS = {
+  ENABLED: "enabled",
+  BLOCK_MODE: "blockMode",
+  REGEX_LIBRARY: "regexLibrary",
+};
+
+const DEFAULT_VALUES = {
+  [STORAGE_KEYS.ENABLED]: false,
+  [STORAGE_KEYS.BLOCK_MODE]: "blackout",
+  [STORAGE_KEYS.REGEX_LIBRARY]: null,
+};
+
+async function getStorageData(key) {
+  const result = await chrome.storage.local.get(key);
+  return result[key] ?? DEFAULT_VALUES[key];
+}
+
+async function getEnabled() {
+  return getStorageData(STORAGE_KEYS.ENABLED);
+}
+
+async function getBlockMode() {
+  return getStorageData(STORAGE_KEYS.BLOCK_MODE);
+}
+
+function sendRuntimeMessage(message) {
+  return new Promise((resolve, reject) => {
+    chrome.runtime.sendMessage(message, (response) => {
+      if (chrome.runtime.lastError) {
+        reject(new Error(chrome.runtime.lastError.message));
+        return;
+      }
+      resolve(response);
+    });
+  });
+}
+
+async function getRegexLibrary() {
+  const library = await getStorageData(STORAGE_KEYS.REGEX_LIBRARY);
+  if (library?.groups) return library;
+
+  const response = await sendRuntimeMessage({ action: "getDefaultRegexLibrary" });
+  if (!response?.library?.groups) {
+    throw new Error(response?.error || "Failed to load regex library");
+  }
+
+  await chrome.storage.local.set({ [STORAGE_KEYS.REGEX_LIBRARY]: response.library });
+  return response.library;
+}
+
 (async () => {
-  const { getBlockMode, getEnabled, getRegexLibrary } = await import(
-    chrome.runtime.getURL("utils/storage.js")
-  );
 
   let isEnabled = false;
   let blockMode = "blackout";

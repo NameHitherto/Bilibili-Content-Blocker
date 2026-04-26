@@ -51,33 +51,48 @@ function createRegexItem(item, groupName) {
   itemEl.className = "regex-item";
   itemEl.dataset.id = item.id;
   itemEl.dataset.group = groupName;
+  itemEl.classList.toggle("selected", selectedItems.has(item.id));
+
+  const toggle = document.createElement("input");
+  toggle.type = "checkbox";
+  toggle.className = "rule-toggle";
+  toggle.checked = item.opened;
+  toggle.title = item.opened ? "已启用" : "已停用";
+  toggle.addEventListener("change", async () => {
+    item.opened = toggle.checked;
+    toggle.title = item.opened ? "已启用" : "已停用";
+    await saveLibrary();
+    notifyContentScript();
+  });
+  itemEl.appendChild(toggle);
 
   if (groupName === "其它") {
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.checked = selectedItems.has(item.id);
-    checkbox.addEventListener("change", () => {
-      if (checkbox.checked) {
-        selectedItems.add(item.id);
-        itemEl.classList.add("selected");
-      } else {
-        selectedItems.delete(item.id);
-        itemEl.classList.remove("selected");
-      }
-    });
-    itemEl.appendChild(checkbox);
-
     const input = document.createElement("input");
     input.type = "text";
     input.value = item.filter;
-    input.addEventListener("change", () => {
+    input.placeholder = "输入正则表达式";
+    input.addEventListener("change", async () => {
       item.filter = input.value;
-      saveLibrary();
+      await saveLibrary();
+      notifyContentScript();
     });
     itemEl.appendChild(input);
+
+    itemEl.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLInputElement) return;
+
+      if (selectedItems.has(item.id)) {
+        selectedItems.delete(item.id);
+        itemEl.classList.remove("selected");
+      } else {
+        selectedItems.add(item.id);
+        itemEl.classList.add("selected");
+      }
+    });
   } else {
     const text = document.createElement("span");
     text.textContent = item.filter;
+    text.className = "regex-text";
     text.style.fontSize = "13px";
     itemEl.appendChild(text);
   }

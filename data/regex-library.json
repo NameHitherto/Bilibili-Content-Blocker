@@ -71,6 +71,12 @@
       ]
     },
     {
+      "name": "测试",
+      "items": [
+        { "type": 1, "filter": ".*", "opened": false, "id": 36 }
+      ]
+    },
+    {
       "name": "其它",
       "items": []
     }

@@ -120,6 +120,17 @@ input:checked + .slider:before {
   margin-right: 8px;
 }
 
+.rule-toggle {
+  flex: 0 0 auto;
+  accent-color: #00a1d6;
+}
+
+.regex-text {
+  flex: 1;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
 .regex-item input[type="text"] {
   flex: 1;
   border: none;
