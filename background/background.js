@@ -1,11 +1,3 @@
-const TEST_GROUP_NAME = "测试";
-const TEST_RULE = {
-  type: 1,
-  filter: ".*",
-  opened: false,
-  id: 36,
-};
-
 let defaultRegexLibraryPromise = null;
 
 async function loadDefaultRegexLibrary() {
@@ -24,24 +16,13 @@ async function loadDefaultRegexLibrary() {
   return JSON.parse(JSON.stringify(library));
 }
 
-function ensureTestGroup(library) {
-  const groups = Array.isArray(library?.groups) ? [...library.groups] : [];
-  const testGroup = groups.find((group) => group.name === TEST_GROUP_NAME);
-
-  if (!testGroup) {
-    groups.push({
-      name: TEST_GROUP_NAME,
-      items: [{ ...TEST_RULE }],
-    });
-    return { ...(library ?? {}), groups };
+function removeTestGroup(library) {
+  if (!Array.isArray(library?.groups)) {
+    return library;
   }
 
-  const hasTestRule = testGroup.items?.some((item) => item.filter === TEST_RULE.filter);
-  if (!hasTestRule) {
-    testGroup.items = [...(testGroup.items ?? []), { ...TEST_RULE }];
-  }
-
-  return { ...(library ?? {}), groups };
+  const groups = library.groups.filter((group) => group?.name !== "测试");
+  return { ...library, groups };
 }
 
 async function ensureDefaultSettings() {
@@ -59,7 +40,7 @@ async function ensureDefaultSettings() {
   if (current.regexLibrary === undefined || current.regexLibrary === null) {
     updates.regexLibrary = await loadDefaultRegexLibrary();
   } else {
-    const normalizedLibrary = ensureTestGroup(current.regexLibrary);
+    const normalizedLibrary = removeTestGroup(current.regexLibrary);
     if (JSON.stringify(normalizedLibrary) !== JSON.stringify(current.regexLibrary)) {
       updates.regexLibrary = normalizedLibrary;
     }
@@ -82,7 +63,7 @@ chrome.runtime.onMessage.addListener((message, _sender, sendResponse) => {
   if (message.action === "getDefaultRegexLibrary") {
     loadDefaultRegexLibrary()
       .then((library) => {
-        sendResponse({ library: ensureTestGroup(library) });
+        sendResponse({ library: removeTestGroup(library) });
       })
       .catch((error) => {
         console.error(error);
