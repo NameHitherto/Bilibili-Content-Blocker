@@ -12,6 +12,6 @@ chrome.runtime.onInstalled.addListener(async () => {
 
 chrome.action.onClicked.addListener((tab) => {
   if (tab.id) {
-    chrome.tabs.sendMessage(tab.id, { action: "toggle" });
+    chrome.tabs.sendMessage(tab.id, { action: "refresh" });
   }
 });
